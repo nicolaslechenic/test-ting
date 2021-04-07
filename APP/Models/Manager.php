@@ -1,16 +1,24 @@
 <?php
 
 namespace Project\Models;
+ require('../../vendor/autoload.php');
 
 use Exception;
+
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__ . '/../../');
+$dotenv->load();
 
 class Manager{
     protected function bdConnect()
     {
 
-        $path="mysql:host=".$_ENV['host'].";dbname=".$_ENV['database'];
+        $db_host = $_ENV['host'];
+        $db_name = $_ENV['database'];
+        $db_user = $_ENV['username'];
+        $db_pass = $_ENV['password'];
+
         try{
-            $bdd = new \PDO($path,$_ENV['username'],$_ENV['password']);
+            $bdd = new \PDO("mysql:host=$db_host;dbname=$db_name;charset=utf8", $db_user, $db_pass);
             return $bdd;
         }catch(Exception $e){
             die('Erreur : '. $e->getMessage());

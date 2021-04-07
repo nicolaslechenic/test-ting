@@ -1,5 +1,7 @@
 <?php 
 
+use Project\Controllers\Back\BackController;
+
 //得具体看一下session的操作
 session_start();
 require_once __DIR__ .'/vendor/autoload.php';
