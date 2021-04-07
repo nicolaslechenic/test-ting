@@ -1,6 +1,6 @@
 <?php 
 
-use Project\Controllers\Back\BackController;
+use Project\Controllers\Front\FrontController;
 
 //得具体看一下session的操作
 session_start();
