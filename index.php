@@ -4,7 +4,7 @@
 session_start();
 require_once __DIR__ .'/vendor/autoload.php';
 try{
-    $frontController = new \Project\Controllers\Front\FrontController();
+    $frontController = new Project\Controllers\Front\FrontController();
 
     if(isset($_GET['action']))
     {
