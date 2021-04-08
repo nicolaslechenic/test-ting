@@ -1,10 +1,16 @@
 <?php 
 
+
+
 use Project\Controllers\Front\FrontController;
 
 //得具体看一下session的操作
 session_start();
-require_once __DIR__ .'/vendor/autoload.php';
+
+require('./vendor/autoload.php');
+$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+$dotenv->load();
+
 try{
     $frontController = new FrontController();
 
