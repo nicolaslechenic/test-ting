@@ -1,11 +1,11 @@
 <?php 
 
+require_once('./vendor/autoload.php');
 use \Project\Controllers\Front\FrontController;
 
 //得具体看一下session的操作
 session_start();
 
-require_once('./vendor/autoload.php');
 
 if(!($_SERVER['HTTP_HOST'] !=  "https://test-ting-ting.herokuapp.com/")) {
     $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
