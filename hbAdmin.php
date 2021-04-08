@@ -1,6 +1,6 @@
 <?php
 
-use Project\Controllers\Back\BackController;
+use \Project\Controllers\Back\BackController;
 
 session_start();
 
