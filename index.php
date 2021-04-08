@@ -1,15 +1,16 @@
 <?php 
 
-
-
 use Project\Controllers\Front\FrontController;
 
 //得具体看一下session的操作
 session_start();
 
 require('./vendor/autoload.php');
-$dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
-$dotenv->load();
+
+if($_SERVER['HTTP_HOST'] !=  "https://test-ting-ting.herokuapp.com/") {
+    $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
+    $dotenv->load();
+}
 
 try{
     $frontController = new FrontController();
@@ -18,19 +19,19 @@ try{
     {
         //各个页面之间的切换，还可以设置变量来切换
         if($_GET['action']=='blog'){
-        $frontController->blog(); 
+            $frontController->blog(); 
         }elseif($_GET['action']=='huitres'){
-        $frontController->huitres(); 
+            $frontController->huitres(); 
         }elseif($_GET['action']=='producers'){
-        $frontController->producers(); 
+            $frontController->producers(); 
         }elseif($_GET['action']=='contact'){
-        $frontController->contact(); 
+            $frontController->contact(); 
         }
         elseif($_GET['action']=='contact'){
-        $frontController->contact(); 
+            $frontController->contact(); 
         }
         elseif($_GET['action']=='connect'){
-        $frontController->connect(); 
+            $frontController->connect(); 
         }
         //关于访问者user的设置
         elseif($_GET['action'] == 'creatUser'){
@@ -84,11 +85,8 @@ try{
             $frontController->producer($id); 
         }
 
-            
-
-
     }else{
-    $frontController->accueil();
+        $frontController->accueil();
     }
     
 } catch(Exception $e){
