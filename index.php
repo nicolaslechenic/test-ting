@@ -8,10 +8,11 @@ use Project\Controllers\Front\FrontController;
 session_start();
 
 
-if(!($_SERVER['HTTP_HOST'] !=  "https://test-ting-ting.herokuapp.com/")) {
+if($_SERVER['HTTP_HOST'] !=  "test-ting-ting.herokuapp.com") {
     $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
     $dotenv->load();
 }
+
 
 try{
     $frontController = new FrontController();
