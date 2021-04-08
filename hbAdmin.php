@@ -6,7 +6,7 @@ session_start();
 
 require_once('./vendor/autoload.php');
 
-if($_SERVER['HTTP_HOST'] !=  "https://test-ting-ting.herokuapp.com/") {
+if(!($_SERVER['HTTP_HOST'] !=  "https://test-ting-ting.herokuapp.com/")) {
     $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
     $dotenv->load();
 }
