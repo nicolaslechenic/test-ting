@@ -1,10 +1,10 @@
 <?php
 
-use \Project\Controllers\Back\BackController;
+require_once('./vendor/autoload.php');
+use Project\Controllers\Back\BackController;
 
 session_start();
 
-require_once('./vendor/autoload.php');
 
 if(!($_SERVER['HTTP_HOST'] !=  "https://test-ting-ting.herokuapp.com/")) {
     $dotenv = Dotenv\Dotenv::createImmutable(__DIR__);
