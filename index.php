@@ -1,6 +1,7 @@
 <?php 
 
 require_once('./vendor/autoload.php');
+
 use \Project\Controllers\Front\FrontController;
 
 //得具体看一下session的操作
